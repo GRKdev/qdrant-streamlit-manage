@@ -47,6 +47,9 @@ Qdrant Vector Management is a Streamlit-based web application designed to simpli
     
     ```bash
     QDRANT_URL="http://localhost:6333"
+    OPENAI_API_KEY="your-openai-api-key"
+    EMDEDDING_MODEL="openai-embeeding-model"
+    VECTOR_SIZE=768
     ```
 5. Run the Streamlit app:
     

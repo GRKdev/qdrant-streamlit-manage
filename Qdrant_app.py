@@ -51,17 +51,6 @@ def main():
         """
         )
 
-    st.header("Getting Started")
-    st.write(
-        """
-    1. Use the sidebar to navigate between different functionalities.
-    2. Select 'Retrieve Points' to start exploring your collections.
-    3. Use the search bar to filter points based on your criteria.
-    4. Expand the payload view to see detailed information about each point.
-    5. Delete points as needed with the conveniently placed delete buttons.
-    """
-    )
-
 
 if __name__ == "__main__":
     main()

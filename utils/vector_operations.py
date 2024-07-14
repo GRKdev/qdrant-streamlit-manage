@@ -19,6 +19,8 @@ logging.basicConfig(
 
 qdrant_url = st.secrets.get("QDRANT_URL", os.getenv("QDRANT_URL"))
 
+embedding_model = st.secrets.get("EMDEDDING_MODEL", os.getenv("EMDEDDING_MODEL"))
+
 
 def save_uploaded_file(uploaded_file):
     try:
@@ -65,7 +67,7 @@ def upload_to_vector(file_path, metadata_info, selected_collection_name):
 
             combined_content = " ".join(doc.page_content for doc in document_contents)
 
-            embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
+            embeddings = OpenAIEmbeddings(model=embedding_model)
 
             document = Document(
                 page_content=combined_content,

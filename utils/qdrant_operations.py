@@ -3,13 +3,17 @@ import streamlit as st
 import os
 
 qdrant_url = st.secrets.get("QDRANT_URL", os.getenv("QDRANT_URL"))
+vector_size = st.secrets.get("VECTOR_SIZE", os.getenv("VECTOR_SIZE"))
+
 client = QdrantClient(location=qdrant_url, timeout=20)
 
 
 def create_collection(name):
     client.create_collection(
         collection_name=name,
-        vectors_config=models.VectorParams(size=3072, distance=models.Distance.COSINE),
+        vectors_config=models.VectorParams(
+            size=vector_size, distance=models.Distance.COSINE
+        ),
         optimizers_config=models.OptimizersConfigDiff(memmap_threshold=20000),
     )
 
