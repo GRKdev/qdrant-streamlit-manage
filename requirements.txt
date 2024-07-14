@@ -1,0 +1,9 @@
+streamlit
+langchain
+langchain-community
+langchain-openai
+qdrant_client
+pypdf
+uuid
+unstructured 
+markdown
