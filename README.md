@@ -43,7 +43,12 @@ Qdrant Vector Management is a Streamlit-based web application designed to simpli
     ```bash
     pip install -r requirements.txt
     ```
-4. Run the Streamlit app:
+4. Set up the environment variables:
+    
+    ```bash
+    QDRANT_URL="http://localhost:6333"
+    ```
+5. Run the Streamlit app:
     
     ```bash
     streamlit run Qdrant_app.py
