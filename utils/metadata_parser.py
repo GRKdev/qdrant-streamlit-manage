@@ -20,11 +20,9 @@ def parse_source_documents(input_text):
 
 def parse_news_document(input_text):
     lines = [line.strip() for line in input_text.split("\n") if line.strip()]
-    news_docs = []
-    for i in range(0, len(lines), 2):
-        if i + 1 < len(lines):
-            news_docs.append({"news_title": lines[i], "news_url": lines[i + 1]})
-    return news_docs
+    if len(lines) >= 2:
+        return {"news_title": lines[0], "news_url": lines[1]}
+    return None
 
 
 def parse_custom_metadata(input_text):
